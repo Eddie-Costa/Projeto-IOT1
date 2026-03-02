@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(10, 17, 24);
+}
+
+.titulo_principal {
+    color: white;
+    text-shadow: 5px 5px 20px black;
+    position: relative;
+    left: 42%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.textodesc{
+    color: white;
+    text-shadow: 5px 5px 20px black;
+    position: relative;
+    left: 44%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.circulo_principal{
+    width: 505px;
+    height: 505px;
+    position: relative;
+    right: 2px;
+    bottom: 1.7px;
+}
+
+.circulo_principal:hover{
+    transition: opacity 0.2s ease; 
+    animation: blink 0.2s infinite;
+}
+
+.flex-box{
+    background-color: rgb(255, 0, 0);
+    position: relative;
+    top: 50px;
+    left: 37%;
+    width: 500px;
+    height: 500px;
+    border-radius: 250px ;
+}
+
+/* Animação de piscar */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

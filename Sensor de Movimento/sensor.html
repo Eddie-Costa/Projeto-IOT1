@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="1">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="Geralcontainer">
+        <h1 class="titulo_principal">Sensor de movimento</h1>
+        <p class="textodesc">Coloque o mouse dentro do circulo</p>
+        <div class="flex-box">
+            <img src="circulo.png" alt="circulo radius" class="circulo_principal" id="circulo_principal">
+        </div>
+
+        <script>
+            const caixa = document.getElementById("circulo_principal");
+
+            setInterval(() => {
+            fetch("estado.txt")
+                .then(res => res.text())
+                .then(data => {
+                if (data.includes("moving")) {
+                    caixa.classList.add("blink");
+
+                    setTimeout(() => {
+                    caixa.classList.remove("blink");
+                    }, 200);
+                }
+                })
+                .catch(() => {});
+            }, 100);
+        </script>
+        
+    </div>
+</body>
+</html>
